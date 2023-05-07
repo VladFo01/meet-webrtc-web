@@ -1,0 +1,74 @@
+
+.login-wrapper-form{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: white;
+    padding:55px 75px;
+    border-radius: 50px;
+}
+.login-wrapper-form-text{
+    position: absolute;
+    top: -7px;
+    left: 10px;
+    font-size: 14px;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.inputBox{
+    position: relative;
+    margin-bottom: 20px;
+}
+
+
+ input:valid ~ .login-wrapper-form-text,
+ input:focus ~ .login-wrapper-form-text{
+     transition: 0.5s;
+     transform: translateX(5px) translateY(-22px);
+     font-size: 12px;
+}
+ .nav-form{
+     background-color: aqua;
+     text-decoration: none;
+     color: white;
+     padding: 5px 20px;
+     outline: none;
+     border: none;
+     border-radius: 10px;
+     position: absolute;
+     right: 25px;
+ }
+.link-btn{
+    text-decoration: none;
+    padding: 10px 30px;
+    color: #000000;
+    font-size: 15px;
+ border: 1px solid #000000;
+    border-radius: 50px;
+    margin: 10px 0;
+}
+.room-header{
+    width: 100%;
+    text-align: center;
+    font-size: 17px;
+    padding: 10px 0;
+    background-color: white;
+}
+.room-wrapper{
+    height: 100%;
+     position: relative;
+}
+.footer-toggler-btns{
+    position: absolute;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    bottom:0;
+    width:100%;
+}
+.room-btn{
+    margin: 0 10px;
+    background-color: red;
+    border-radius: 100%;
+}
