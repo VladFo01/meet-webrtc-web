@@ -1,13 +1,12 @@
 import '../../styles/index.css';
 import '../../styles/norm.css';
-
-
+import React, { useState, useEffect } from 'react';
+import { Context } from '../../App';
 import {Link} from "react-router-dom";
-import {useState,useEffect} from "react";
 
 const Login =()=>{
-const [userName,setUserName] = useState('');
-    const [roomId,setUserId] = useState('');
+    const {userName, setUserName} = React.useContext(Context);
+    const {loginRoomId, setLoginRoomId} = React.useContext(Context);
 
     return(
         <div className='site-wrapper default-bg'>
@@ -16,20 +15,16 @@ const [userName,setUserName] = useState('');
                 <form >
                     <div className='inputBox'>
 
-                        <input type='text'
-                               name="name"
-                               onChange={(e)=>setUserName(e.target.value)}
-                               />
+                        <input type='text' name="name" required 
+                        value={userName} onChange={(e) => setUserName(e.target.value)}/>
                         <p className='login-wrapper-form-text'>What is your name?</p>
                     </div>
                     <div className='inputBox'>
-                        <input type='text'
-                               name="roomId"
-                               onChange={(e)=>setUserId(e.target.value)}
-                        />
+                        <input type='text' name="roomId" required
+                        value={loginRoomId} onChange={(e) => setLoginRoomId(e.target.value)}/>
                         <p className='login-wrapper-form-text'>Room id</p>
                     </div>
-                    <Link className='nav-form' to={`/room/${roomId}`} >Ok</Link>
+                    <Link className='nav-form' to={`/room/${loginRoomId}`} >Ok</Link>
                 </form>
             </div>
         </div>
