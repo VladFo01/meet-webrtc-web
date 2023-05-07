@@ -20,7 +20,7 @@ function App() {
         <Route exact path="/" element={<SelectRoom />} />
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/register" element={<Register />} />
-        <Route exact path="/room" element={<Room />} />
+        <Route exact path="/room/:roomId" element={<Room />} />
     </Routes>
 </Router>
     </div>

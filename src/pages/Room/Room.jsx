@@ -5,7 +5,15 @@ import { AiFillAudio } from "react-icons/ai";
 import {MdCallEnd} from "react-icons/md";
 import {BsFillCameraVideoOffFill} from "react-icons/bs";
 
+
+import {useNavigate} from "react-router-dom";
+
 const Room =() => {
+   const navigate = useNavigate();
+
+    const onLeave = () => {
+        navigate(-1)
+    }
     return (
         <div className='room-wrapper default-bg'>
             <h1 className='room-header'>Room Name</h1>
@@ -14,7 +22,7 @@ const Room =() => {
             <div className='footer-toggler-btns'>
                 <btn className='room-btn'><BsFillCameraVideoOffFill/></btn>
                 <btn className='room-btn'><AiFillAudio/></btn>
-                <btn className='room-btn'><MdCallEnd /></btn>
+                <btn onClick={onLeave} className='room-btn'><MdCallEnd /></btn>
             </div>
         </div>
     )

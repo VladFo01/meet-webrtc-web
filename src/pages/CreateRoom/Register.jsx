@@ -4,9 +4,18 @@ import '../../styles/norm.css';
 
 
 import {Link} from "react-router-dom";
+import {useState,useEffect} from "react";
 
 
 const Register =() => {
+const [roomId, setRoomId] = useState('');
+
+
+useEffect(()=>{
+    const num = Math.floor(Math.random() * 1000000);
+    setRoomId(num)
+},[])
+
 
     return (
         <div className='site-wrapper default-bg'>
@@ -20,13 +29,7 @@ const Register =() => {
                                required='required' />
                         <p className='login-wrapper-form-text'>What is your name?</p>
                     </div>
-                    <div className='inputBox'>
-                        <input type='text'
-                               name="roomId"
-                               required='required'/>
-                        <p className='login-wrapper-form-text'>Create room number</p>
-                    </div>
-                    <Link className='nav-form' to='/room' >Ok</Link>
+                    <Link className='nav-form' to={`/room/${roomId}`} >Ok</Link>
                 </form>
             </div>
         </div>

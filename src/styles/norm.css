@@ -68,6 +68,8 @@
     width:100%;
 }
 .room-btn{
+    padding: 15px;
+    cursor:pointer;
     margin: 0 10px;
     background-color: red;
     border-radius: 100%;
