@@ -13,24 +13,21 @@ import call from "../../assets/call.svg"
 
 
 import {useNavigate} from "react-router-dom";
-import Tools from "../../components/Tools/Tools";
+import useUserMedia from '../../hooks/useUserMedia';
 
 import {useRef} from "react";
 import {useState} from "react";
 
 const Room =() => {
     const videoRef = useRef(null);
-    const {startCamera} = Tools(videoRef);
-
-    const [toggler, setToggler] = useState(false);
+    const { stream, toggler } = useUserMedia(videoRef)
 
    const navigate = useNavigate();
 
-
    const onCamera = () => {
-           setToggler(!toggler)
+        //    setToggler(!toggler)
 
-           startCamera()
+        //    startCamera()
 
    }
     const onLeave = () => {

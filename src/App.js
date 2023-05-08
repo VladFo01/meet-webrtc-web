@@ -17,9 +17,6 @@ function App() {
   const [userName, setUserName] = React.useState("");
   const [loginRoomId, setLoginRoomId] = React.useState("");
 
-  console.log(userName);
-  console.log(loginRoomId);
-
   return (
     <Context.Provider value={{userName, setUserName, loginRoomId, setLoginRoomId}}>
       <div className="App">
